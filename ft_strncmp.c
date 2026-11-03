@@ -19,10 +19,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	prim = (unsigned char *) s1;
 	sec = (unsigned char *) s2;
-	while (n-- && *prim == *sec)
+	while (n--)
 	{
+		if (*prim != *sec || *prim == '\0')
+			return (*prim - *sec);
 		prim++;
 		sec++;
 	}
-	return (*prim - *sec);
+	return (0);
 }
