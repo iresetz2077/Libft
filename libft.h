@@ -13,19 +13,16 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-//a enlever
-# include <stdio.h>
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
 
 //Is
-int	    ft_isalpha(int c);
-int	    ft_isdigit(int c);
-int	    ft_isalnum(int c);
-int	    ft_isascii(int c);
-int	    ft_isprint(int c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 
 //Mem
 void	*ft_memset(void *a, int c, size_t n);
@@ -47,10 +44,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t n);
 char	*ft_strdup(const char *s);
 
 //To
-int	    ft_toupper(int c);
-int	    ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
-int	    ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr);
 
 void	ft_putchar_fd(char c, int fd);
 
