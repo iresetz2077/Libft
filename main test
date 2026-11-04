@@ -1,0 +1,146 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   main test                                         :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: clmo <clmo@student.42nice.fr>             #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/17 21:02:00 by clmo             #+#    #+#              */
+/*   Updated: 2026/10/18 20:42:10 by clmo            ###   ########.fr        */
+/*                                                                            */
+/* ************************************************************************** */
+
+//main memset
+
+int	main(void)
+{
+	int	*k;
+
+	k = malloc(sizeof(int) * 10);
+	if (!k)
+		return (1);
+	ft_memset(k, 1, 10 * sizeof(int));
+	ft_memset(k, 0, 5 * sizeof(int));
+	for (int i = 0; i < 10; i++)
+		printf("%d ", k[i]);
+	free(k);
+	return (0);
+}
+
+//main bzero
+
+int	main(void)
+{
+	int	*k;
+
+	k = malloc(sizeof(int) * 10);
+	if (!k)
+		return (1);
+	ft_memset(k, -1, 10 * sizeof(int));
+	for (int i = 0; i < 10; i++)
+		printf("%d ", k[i]);
+	ft_bzero(k, 10 * sizeof(int));
+	ft_bzero(k, 5 * sizeof(int));
+	for (int i = 0; i < 10; i++)
+		printf("%d ", k[i]);
+	free(k);
+	return (0);
+}
+
+//main memcpy
+
+int	main(void)
+{
+	int	*src;
+	int	*dest;
+
+	src = malloc(sizeof(int) * 10);
+	if (!src)
+		return (1);
+	dest = malloc(sizeof(int) * 10);
+	if (!dest)
+		return (1);
+	ft_memset(src, 0, 10 * sizeof(int));
+	ft_memset(dest, -1, 10 * sizeof(int));
+	ft_memcpy(dest, src, 5 * sizeof(int));
+	for (int i = 0; i < 10; i++)
+		printf("%d ", dest[i]);
+	free(src);
+	free(dest);
+	return (0);
+}
+
+//main memmove
+#include <string.h>
+
+int	main(void)
+{
+	char	a[20] = "0123456789";
+	char	b[20] = "0123456789";
+
+	ft_memmove(a + 2, a, 5);
+	memmove(b + 2, b, 5);
+	printf("src < dest : ft = %s | vrai = %s\n", a, b);
+	strcpy(a, "0123456789");
+	strcpy(b, "0123456789");
+	ft_memmove(a, a + 2, 5);
+	memmove(b, b + 2, 5);
+	printf("src > dest : ft = %s | vrai = %s\n", a, b);
+	return (0);
+}
+
+//main strlcpy
+
+int	main(void)
+{
+	const char	src[100] = "123456789\0";
+	char		dest[100];
+
+	printf("%ld", ft_strlcpy(dest, src, 0));
+}
+
+//main strlcat
+
+int	main(void)
+{
+	char		dest[100] = "test";
+	const char	src[100] = " clement";
+
+	printf("%zd\n", ft_strlcat(dest, src, 8));
+	return (0);
+}
+
+//main strncmp
+
+int	main(void)
+{
+	const char	s1[100] = "test1";
+	const char	s2[100] = "test0";
+
+	printf("%d", ft_strncmp(s1, s2, 5));
+}
+
+//main substr
+
+int main(void)
+{
+	char const s[100] = "lorem ipsum dolor sit amet";
+	char *dest;
+	
+	dest = ft_substr(s, 0, 10);
+	printf("%s", dest);
+	free(dest);
+}
+
+//main strjoin
+
+int	main(void)
+{
+	char	s1[100] = "";
+	char	s2[100] = "";
+	char	*dest;
+
+	dest = ft_strjoin(s1, s2);
+	printf("%s", dest);
+	free(dest);
+}
