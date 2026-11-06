@@ -26,7 +26,8 @@ SRC =	ft_isalpha.c \
 		ft_atoi.c \
 		ft_putchar_fd.c \
 		ft_substr.c \
-		ft_strjoin.c
+		ft_strjoin.c \
+		ft_strtrim.c
 OBJ = $(SRC:.c=.o)
 INC = .
 
