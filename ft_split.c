@@ -110,6 +110,7 @@ char	**ft_split(char const *s, char c)
 	{
 		ft_freearray(array, words);
 		return (NULL);
+	}
 	array = ft_transfer(array, words, src, c);
 	array[words][0] = NULL;
 	return (array);
