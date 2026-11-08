@@ -32,13 +32,13 @@ static size_t	ft_countwords(const char *s, int c)
 
 	while (str[i])
 	{
-		if (str[i] == (unsigned char) c && str[i-1] != c)
+		if (str[i] == (unsigned char) c && str[i - 1] != c)
 			count++;
 		i++;
 	}
-	if (str[i-1] != c)
+	if (str[i - 1] != c)
 		count++;
-	return(count);
+	return (count);
 }
 
 static char	**ft_transfer(char **array, size_t words, char *src, char c)
@@ -77,10 +77,10 @@ static char	**ft_mallocarray(const char s, char c, size_t words)
 	{
 		letter = 0;
 		while (s[i] != c && s[i])
-			{
-				letter++;
-				i++;
-			}
+		{
+			letter++;
+			i++;
+		}
 		array[j] = malloc(sizeof(char) * letter + 1);
 		if (array[j] == 0)
 		{
@@ -90,7 +90,6 @@ static char	**ft_mallocarray(const char s, char c, size_t words)
 		j++;
 		i++;
 	}
-	array[words] = NULL;
 	return (array);
 }
 
@@ -110,5 +109,6 @@ char	**ft_split(char const *s, char c)
 	if (array[words] == 0)
 		return(NULL);
 	array = ft_transfer(array, words, src, c);
+	array[words][0] = NULL;
 	return (array);
 }
