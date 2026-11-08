@@ -52,6 +52,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 int		ft_atoi(const char *nptr);
+char	*ft_itoa(int n);
 
 void	ft_putchar_fd(char c, int fd);
 
