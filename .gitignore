@@ -3,3 +3,4 @@ a.out
 *.o
 libft.a
 libft-war-machine/
+main test
