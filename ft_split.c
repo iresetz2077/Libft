@@ -41,16 +41,27 @@ static size_t	ft_countwords(const char *s, int c)
 	return(count);
 }
 
-static char	**ft_transfer(unsigned char *str, unsigned char **array, char c)
+static char	**ft_transfer(char **array, size_t words, char *src, char c)
 {
-	unsigned char	*p;
-	size_t			nb;
+	size_t	i;
+	size_t	j;
 
-	nb = ft_countstrings(str, (int) c);
-	while (*str != c)
+	while (*src)
 	{
-
+		while (*src != c)
+		{
+			array[i][j] = *src;
+			src++;
+			j++;
+		}
+		if (*src == c)
+			array[i][j] = 0;
+		else
+			return (array);
+		i++;
+		j = 0;
 	}
+	return (array);
 }
 
 static char	**ft_mallocarray(const char s, char c, size_t words)
@@ -86,8 +97,10 @@ static char	**ft_mallocarray(const char s, char c, size_t words)
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
+	char	*src;
 	size_t	words;
 
+	src = (char *) s;
 	array = malloc(sizeof(char *) * words + 1);
 	if (array == 0)
 		return(NULL);
@@ -96,5 +109,6 @@ char	**ft_split(char const *s, char c)
 	array[words] = malloc(sizeof(char) * 1);
 	if (array[words] == 0)
 		return(NULL);
-	ft_transfer(array, words, (char) s, c);
+	array = ft_transfer(array, words, src, c);
+	return (array);
 }
