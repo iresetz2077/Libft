@@ -102,12 +102,14 @@ char	**ft_split(char const *s, char c)
 	src = (char *) s;
 	array = malloc(sizeof(char *) * words + 1);
 	if (array == 0)
-		return(NULL);
+		return (NULL);
 	words = ft_countwords(s, c);
 	array = ft_mallocarray(s, c, words);
 	array[words] = malloc(sizeof(char) * 1);
 	if (array[words] == 0)
-		return(NULL);
+	{
+		ft_freearray(array, words);
+		return (NULL);
 	array = ft_transfer(array, words, src, c);
 	array[words][0] = NULL;
 	return (array);
