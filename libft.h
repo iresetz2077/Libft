@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   libft.h                                           :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: clmo <clmo@student.42nice.fr>             #+#  +:+       +#+         */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 20:46:18 by clmo             #+#    #+#              */
-/*   Updated: 2026/10/18 21:05:50 by clmo            ###   ########.fr        */
+/*   Created: 2026/10/16 20:46:18 by username         #+#    #+#              */
+/*   Updated: 2026/11/08 19:30:46 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stddef.h>
 
 //Is
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
+int	ft_isascii(int c);
+int	ft_isprint(int c);
 
 //Mem
 void	*ft_memset(void *a, int c, size_t n);
@@ -47,16 +47,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 //To
-int		ft_toupper(int c);
-int		ft_tolower(int c);
+int	ft_toupper(int c);
+int	ft_tolower(int c);
 
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 
 void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 //a enlever
 size_t	ft_countstrings(unsigned char *str, int c);
