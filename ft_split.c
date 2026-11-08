@@ -93,4 +93,8 @@ char	**ft_split(char const *s, char c)
 		return(NULL);
 	words = ft_countwords(s, c);
 	array = ft_mallocarray(s, c, words);
+	array[words] = malloc(sizeof(char) * 1);
+	if (array[words] == 0)
+		return(NULL);
+	ft_transfer(array, words, (char) s, c);
 }
