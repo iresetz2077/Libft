@@ -144,3 +144,13 @@ int	main(void)
 	printf("%s", dest);
 	free(dest);
 }
+
+//main countstrings
+
+int	main(void)
+{
+	unsigned char	str[100] = "aaabaaabaaabaaab";
+	int				c = 'b';
+
+	printf("%zu", ft_countstrings(str, c));
+}

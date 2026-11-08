@@ -54,4 +54,7 @@ int		ft_atoi(const char *nptr);
 
 void	ft_putchar_fd(char c, int fd);
 
+//a enlever
+size_t	ft_countstrings(unsigned char *str, int c);
+
 #endif
