@@ -11,3 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*str;
+	int		len_s;
+
+	len_s = ft_strlen(s);
+	str = malloc((sizeof(char) * len_s + 1));
+	if (str == 0)
+		return (NULL);
+	str[len_s] = '\0';
+	while (len_s--)
+	{
+		str[len_s] = (*f)(len_s, s[len_s]);
+	}
+	return (str);
+}
