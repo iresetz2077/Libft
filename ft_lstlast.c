@@ -17,7 +17,7 @@ t_list	*ft_lstlast(t_list *lst)
 	unsigned int	last;
 
 	if (lst == NULL)
-		return(NULL);
+		return (NULL);
 	last = ft_lstsize(lst) - 1;
 	while (last--)
 		lst = lst->next;

@@ -22,5 +22,5 @@ unsigned int	ft_lstsize(t_list *lst)
 		size++;
 		lst = lst->next;
 	}
-	return(size);
+	return (size);
 }

@@ -18,11 +18,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len2;
 	char	*dest;
 
-	if(!s1 && !s2)
+	if (!s1 && !s2)
 		return (ft_strdup(""));
-	if(!s1)
+	if (!s1)
 		return (ft_strdup(s2));
-	if(!s2)
+	if (!s2)
 		return (ft_strdup(s1));
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
